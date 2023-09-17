@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de Plazo Fijo</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <h1>CALCULADOR DE PLAZO FIJO</h1>
+    <div class="contenedor">
+        <!-- <div><iframe style="width:320px;height:260px;border-radius:10px;box-shadow:2px 4px 4px rgb(0 0 0 / 25%);display:flex;justify-content:center;border:1px solid #bcbcbc" src="https://dolarhoy.com/i/cotizaciones/dolar-blue" frameborder="0"></iframe></div>
+          
+        <div><iframe style="width:320px;height:260px;border-radius:10px;box-shadow:2px 4px 4px rgb(0 0 0 / 25%);display:flex;justify-content:center;border:1px solid #bcbcbc" src="https://dolarhoy.com/i/cotizaciones/dolar-mep" frameborder="0"></iframe></div> -->
+
+        <div class="contenedor-centro">
+            <!-- <div class="tipoPlazo alineacion">
+                <label for="tipoPlazo">Tipo plazo Fijo</label>
+                <input type="text" id="tipoPlazo">
+            </div> -->
+            <div class="monto alineacion ">
+                <label for="monto">Intrese Monto $</label>
+                <input type="text" id="monto" class="imput-comun" placeholder="Mayor a $1000">
+            </div>
+
+            <div class="cantDias alineacion">
+                <label for="cantDias">Intrese cant. dias</label>
+                <input type="text" id="cantDias" class="imput-comun" placeholder="Mayor a 30 dias">
+            </div>
+
+            <div class="tna alineacion">
+                <label for="tna">Intrese el TNA</label>
+                <input type="text" id="tna" class="imput-comun" placeholder="Mayor a 0%">
+            </div>
+            <div class="botones">
+                <button class="btn" id="btn-calcular">Calcular</button>
+                <button class="btn" id="btn-borrar">Borrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="contenedor contenedor-resp">
+        <div class="contenedor-centro centro-resp">
+            <div class="resp_monto alineacion">
+                <label for="resp_monto">Monto invertido</label>
+                <p id="resp_monto"></p>
+            </div>
+
+            <div class="resp_interes alineacion">
+                <label for="resp_interes">Ingeres generado</label>
+                <p id="resp_interes"></p>
+            </div>
+
+            <div class="resp_total alineacion">
+                <label for="resp_total">Total a acreditar</label>
+                <p id="resp_total"></p>
+            </div>
+
+            <div class="resp_cantDias alineacion">
+                <label for="resp_cantDias">Intrese cant. dias</label>
+                <p id="resp_cantDias"></p>
+            </div>
+
+            <div class="resp_tna alineacion">
+                <label for="resp_tna">Intrese el TNA</label>
+                <p id="resp_tna"></p>
+            </div>
+
+            <div class="resp_tea alineacion">
+                <label for="resp_tea">Intrese el TEA</label>
+                <p id="resp_tea"></p>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="divContenedor" id="divContenedor">
+    </div>
+    
+
+
+    <script src="main.js"></script>
+</body>
+</html>
