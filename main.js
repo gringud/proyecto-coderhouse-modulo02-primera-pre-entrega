@@ -1,18 +1,17 @@
 const d = document;
 
-//traigo todos los label
+
 const lbl_monto = d.getElementById("monto");
 const lbl_dias = d.getElementById("cantDias");
 const lbl_tna = d.getElementById("tna");
 
-//traigo los botones
+
 const btn_calcular = d.getElementById("btn-calcular");
 const btn_borrar = d.getElementById("btn-borrar");
-/* console.log(btn_calcular.innerHTML);
-console.log(btn_borrar.innerHTML); */
+
 
 const divContenedor = d.getElementById("divContenedor");
-//FUNCION PARA EJECUTAR CALCULO DE RESULTADOS
+
 btn_calcular.addEventListener("click", () => {
 
     validarCampos(lbl_dias, lbl_monto, lbl_tna);
@@ -31,7 +30,7 @@ btn_calcular.addEventListener("click", () => {
                 let calc_tea = (((1+(tna/100)/12) ** 12) -1).toFixed(2)
                 
 
-                //  ACA IMPRIMO LOS RESULTADOS QUE TENGO QUE PONER EN EL EL CUADRO
+                
                 console.log("El interes ganado es: "+calc_interes);
                 console.log("Total a depositar "+total_cuenta);
                 console.log("El tea es "+calc_tea);
@@ -40,15 +39,15 @@ btn_calcular.addEventListener("click", () => {
 
             } else {
                 console.log("El TNA debe ser mayor a 0");
-                /* lbl_tna.classList.add("campo-error") */
+                
             }   
         } else {
             console.log("Cantidad de dinero a depositar debe superar los $1000");
-            /* lbl_monto.classList.add("campo-error") */
+            
         }
     } else {
         console.log("La cantidad de dias para constituir un Plazo fijo debe ser mayor a 30 dias");
-        /* lbl_dias.classList.add("campo-error") */
+        
     }
 })
 
@@ -92,7 +91,7 @@ function validarCampos(lbl_dias, lbl_monto, lbl_tna){
 
 function crearTablaConValores(monto,dias,tna,calc_interes, total_cuenta, calc_tea) {
 
-    /* const divContenedor = d.getElementById("divContenedor"); */
+    
 
     divContenedor.innerHTML = `
     <div class="contenedor contenedor-resp">
@@ -131,23 +130,4 @@ function crearTablaConValores(monto,dias,tna,calc_interes, total_cuenta, calc_te
                             ` ;
     
 
-
-    //llamo a los p que contienen la info
-    /* 
-    id="resp_monto"></p>
-    id="resp_interes"></p>
-    id="resp_total"></p>
-    id="resp_cantDias"></p>
-    id="resp_tna"></p>
-    id="resp_tea"></p>
-    */
-
-    /* const respuestaMostrar = d.querySelectorAll("<p>");
-    console.log(respuestaMostrar); */
-
-    
-    
-    /* console.log("entre a la funcion");
-    console.log(a);
-    console.log(b); */
 }
