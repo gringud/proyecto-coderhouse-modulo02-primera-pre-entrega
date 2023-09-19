@@ -14,6 +14,7 @@ const divContenedor = d.getElementById("divContenedor");
 
 btn_calcular.addEventListener("click", () => {
 
+    
     validarCampos(lbl_dias, lbl_monto, lbl_tna);
 
     if (parseInt(lbl_dias.value) >= 30){
@@ -28,14 +29,20 @@ btn_calcular.addEventListener("click", () => {
                 let total_cuenta = monto + calc_interes;
                 
                 let calc_tea = (((1+(tna/100)/12) ** 12) -1).toFixed(2)
-                
 
+                const meses = 12;
+                let gananciaAcumulada = 1000;
+                for (let i = 0; i<= meses-1; i++){
+                    console.log(gananciaAcumulada);
+                    gananciaAcumulada = gananciaAcumulada + (gananciaAcumulada*30*118/365)/100;
+                }
+                console.log("La ganancia es: "+gananciaAcumulada);
                 
                 console.log("El interes ganado es: "+calc_interes);
                 console.log("Total a depositar "+total_cuenta);
                 console.log("El tea es "+calc_tea);
 
-                crearTablaConValores(monto, dias, tna, calc_interes, total_cuenta, calc_tea);
+                crearTablaConValores(monto, dias, tna, calc_interes, total_cuenta, calc_tea, gananciaAcumulada);
 
             } else {
                 console.log("El TNA debe ser mayor a 0");
@@ -89,7 +96,7 @@ function validarCampos(lbl_dias, lbl_monto, lbl_tna){
 
 
 
-function crearTablaConValores(monto,dias,tna,calc_interes, total_cuenta, calc_tea) {
+function crearTablaConValores(monto,dias,tna,calc_interes, total_cuenta, calc_tea, ganancia_anual) {
 
     
 
@@ -124,6 +131,11 @@ function crearTablaConValores(monto,dias,tna,calc_interes, total_cuenta, calc_te
         <div class="resp_tea resp_alineacion">
             <label class="respuestas" for="resp_tea">Intrese el TEA: </label>
             <p id="resp_tea">${calc_tea} %</p>
+        </div>
+
+        <div class="resp_tea resp_alineacion">
+            <label class="respuestas" for="resp_tea">Ganancia Total Anual: </label>
+            <p id="resp_tea">${ganancia_anual.toFixed(2)} %</p>
         </div>
     </div>
 </div>
