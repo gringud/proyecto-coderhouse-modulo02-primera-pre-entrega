@@ -221,15 +221,25 @@ function agregarItems(){
     let temporalPrecio = prompt("Ingrese el Precio");
 
     console.log(arreglo.length-1);
-    console.log(arreglo[arreglo.length-1].id);
+    /* console.log(arreglo[arreglo.length-1].id); */
 
     /* arreglo.push([arreglo[arreglo.length-1].id, temporalMarca, temporalModelo, temporalAnio]); */
+    
     arreglo.push({
-        id: arreglo[arreglo.length-1].id+1, 
+        id: (arreglo.length != 0)? arreglo[arreglo.length-1].id+1:0, 
         marca: temporalMarca,
         modelo: temporalModelo,
         precio: temporalPrecio
     })
+    
+    /* arreglo.push({
+        id: arreglo[arreglo.length-1].id+1, 
+        marca: temporalMarca,
+        modelo: temporalModelo,
+        precio: temporalPrecio
+    }) */
+
+
     console.log(arreglo);
     actualizar();
 }
