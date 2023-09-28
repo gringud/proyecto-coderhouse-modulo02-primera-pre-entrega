@@ -140,6 +140,123 @@ function crearTablaConValores(monto,dias,tna,calc_interes, total_cuenta, calc_te
     </div>
 </div>
                             ` ;
-    
-
 }
+
+//segunda entrega
+
+const btnPromt = d.querySelector(".btnPromt");
+console.log(btnPromt);
+
+const listado = d.querySelector(".listado");
+/* listado.innerHTML = "asd" */
+
+
+
+let arreglo = [];
+arreglo[0] = {
+    id:0,
+    marca: "Ford",
+    modelo: "Ka",
+    precio: 5000
+}
+
+arreglo[1] = {
+    id:1,
+    marca: "Audi",
+    modelo: "A3",
+    precio: 12000
+}
+
+arreglo[2] = {
+    id:2,
+    marca: "Chevrolet",
+    modelo: "Corsa",
+    precio: 3000
+}
+
+
+
+
+function iniciar(){
+    listado.innerHTML = `<div class="items-titulo">
+                            <div>ID</div>
+                            <div>Marca</div>
+                            <div>Modelo</div>
+                            <div>Precio</div>
+                        </div>
+                        `
+
+};
+
+function actualizar(){
+    iniciar();
+    for (let i = 0; i< arreglo.length; i++){
+        console.log(arreglo[i]);
+        listado.innerHTML += `<div class="items">
+                                <div>${arreglo[i].id}</div>
+                                <div>${arreglo[i].marca}</div>
+                                <div>${arreglo[i].modelo}</div>
+                                <div>${arreglo[i].precio}</div>
+                            </div>
+                            `
+    }
+}
+
+/* iniciar(); */
+actualizar();
+
+
+
+const btnAgregar = d.querySelector(".agregar");
+const btnBorrar = d.querySelector(".borrar-item");
+
+
+function agregarItems(){
+    /* let temporalMarca ="",
+        temporalModelo ="",
+        temporalAnio=""; */
+    prompt
+    let temporalMarca = prompt("Ingrese la marca");
+    let temporalModelo = prompt("Ingrese el Modelo");
+    let temporalPrecio = prompt("Ingrese el Precio");
+
+    console.log(arreglo.length-1);
+    console.log(arreglo[arreglo.length-1].id);
+
+    /* arreglo.push([arreglo[arreglo.length-1].id, temporalMarca, temporalModelo, temporalAnio]); */
+    arreglo.push({
+        id: arreglo[arreglo.length-1].id+1, 
+        marca: temporalMarca,
+        modelo: temporalModelo,
+        precio: temporalPrecio
+    })
+    console.log(arreglo);
+    actualizar();
+}
+
+
+
+d.addEventListener("click", el =>{
+    if (el.target.matches(".agregar")){
+        agregarItems();
+        console.log("presione el boton");
+    }
+})
+
+d.addEventListener("click", el =>{
+    if (el.target.matches(".borrar-item")){
+        console.log("estoy borrando");
+
+        /* const found = arreglo.find((el) => {
+            el === 2
+        } ); */
+
+        let temporalEliminar = prompt("Ingrese el ID que quiere eliminar")
+        const found = arreglo.find((element) => element.id === parseInt(temporalEliminar));
+        
+        arreglo = arreglo.filter((item) => item !== found)
+
+        actualizar();
+        
+    }
+})
