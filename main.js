@@ -144,8 +144,7 @@ function crearTablaConValores(monto,dias,tna,calc_interes, total_cuenta, calc_te
 
 //segunda entrega
 
-const btnPromt = d.querySelector(".btnPromt");
-console.log(btnPromt);
+
 
 const listado = d.querySelector(".listado");
 /* listado.innerHTML = "asd" */
@@ -153,6 +152,7 @@ const listado = d.querySelector(".listado");
 
 
 let arreglo = [];
+
 arreglo[0] = {
     id:0,
     marca: "Ford",
@@ -212,18 +212,13 @@ const btnBorrar = d.querySelector(".borrar-item");
 
 
 function agregarItems(){
-    /* let temporalMarca ="",
-        temporalModelo ="",
-        temporalAnio=""; */
+    
     prompt
     let temporalMarca = prompt("Ingrese la marca");
     let temporalModelo = prompt("Ingrese el Modelo");
     let temporalPrecio = prompt("Ingrese el Precio");
 
-    console.log(arreglo.length-1);
-    /* console.log(arreglo[arreglo.length-1].id); */
-
-    /* arreglo.push([arreglo[arreglo.length-1].id, temporalMarca, temporalModelo, temporalAnio]); */
+    
     
     arreglo.push({
         id: (arreglo.length != 0)? arreglo[arreglo.length-1].id+1:0, 
@@ -232,15 +227,10 @@ function agregarItems(){
         precio: temporalPrecio
     })
     
-    /* arreglo.push({
-        id: arreglo[arreglo.length-1].id+1, 
-        marca: temporalMarca,
-        modelo: temporalModelo,
-        precio: temporalPrecio
-    }) */
+    
 
 
-    console.log(arreglo);
+    /* console.log(arreglo); */
     actualizar();
 }
 
@@ -249,17 +239,12 @@ function agregarItems(){
 d.addEventListener("click", el =>{
     if (el.target.matches(".agregar")){
         agregarItems();
-        console.log("presione el boton");
+        /* console.log("presione el boton"); */
     }
 })
 
 d.addEventListener("click", el =>{
-    if (el.target.matches(".borrar-item")){
-        console.log("estoy borrando");
-
-        /* const found = arreglo.find((el) => {
-            el === 2
-        } ); */
+    if (el.target.matches(".borrar-item")){       
 
         let temporalEliminar = prompt("Ingrese el ID que quiere eliminar")
         const found = arreglo.find((element) => element.id === parseInt(temporalEliminar));
